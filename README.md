@@ -1,1 +1,4 @@
-# fuel8_plugin_rsync
+test
+============
+
+Plugin description
