@@ -1,33 +1,17 @@
 # These tasks will be merged into deployment graph. Here you
 # can specify new tasks for any roles, even built-in ones.
 
-- id: test_role
-  type: group
-  role: [test_role]
-  parameters:
-    strategy:
-      type: parallel
 
-- id: test-deployment-puppet
+- id: fuel-plugin-git-deployment-puppet
   type: puppet
-  role: [test_role]
-
-# If you do not want to use task-based deployment that is introduced as experimental
-# in fuel v8.0 comment code section below this comment, uncomment two lines below it
-# and do the same for tasks below.
-
   version: 2.0.0
-  cross-depends:
-    - name: deploy_start
-  cross-depended-by:
-    - name: deploy_end
-#  requires: [deploy_start] # version 1.0.0
-#  required_for: [deploy_end]
-
+  role: ['primary controller', 'controller', 'compute', 'cinder', 'base-os']
+  requires: [post_deployment_start]
+  required_for: [post_deployment_end]
   parameters:
-    puppet_manifest: "deploy.pp"
-    puppet_modules: "."
-    timeout: 3600
+    puppet_manifest: "manifests/git.pp"
+    puppet_modules: "modules"
+    timeout: 180
 
 #- id: test-post-deployment-sh
 #  type: shell
