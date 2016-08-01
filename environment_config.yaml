@@ -3,9 +3,15 @@ attributes:
     # Settings group can be one of "general", "security", "compute", "network",
     # "storage", "logging", "openstack_services" and "other".
     group: 'other'
-  test_text:
-    value: 'Set default value'
-    label: 'Text field'
-    description: 'Description for text field'
-    weight: 25
-    type: "text"
+  git_username:
+    value: 'my_user'
+    label: 'Username'
+    description: 'Git Username'
+    weight: 10
+    type: 'text'
+  git_email:
+    value: 'user@domain.tld'
+    label: 'eMail'
+    description: 'Git eMail address'
+    weight: 20
+    type: 'text'
