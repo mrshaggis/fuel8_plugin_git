@@ -5,7 +5,7 @@
 - id: fuel-plugin-git-deployment-puppet
   type: puppet
   version: 2.0.0
-  role: ['primary controller', 'controller', 'compute', 'cinder', 'base-os']
+  role: ['primary_controller', 'controller', 'compute', 'cinder', 'base-os']
   requires: [post_deployment_start]
   required_for: [post_deployment_end]
   parameters:
