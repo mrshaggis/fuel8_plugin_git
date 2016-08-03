@@ -9,8 +9,8 @@
   requires: [post_deployment_start]
   required_for: [post_deployment_end]
   parameters:
-    puppet_manifest: "manifests/git.pp"
-    puppet_modules: "modules"
+    puppet_manifest: "puppet/manifests/git.pp"
+    puppet_modules: "puppet/modules:/etc/puppet/modules"
     timeout: 180
 
 #- id: test-post-deployment-sh
