@@ -1,8 +1,0 @@
-- name: additional_services:fuel-plugin-git
-  compatible: 
-    - name: 'hypervisor:*'
-  requires: []
-  incompatible: []
-  label: "Git Plugin for Fuel"
-  description: "Add the git version control system to your nodes"
-  
